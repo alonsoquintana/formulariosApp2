@@ -4,10 +4,16 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'template'
+    path: 'template',
+    loadChildren: () => import('./template/template.module').then( m => m.TemplateModule )
   },
   {
-    path: 'reactivate'
+    path: 'reactive',
+    loadChildren: () => import('./reactive/reactive.module').then( m => m.ReactiveModule )
+  },
+  {
+    path: '**',
+    redirectTo: 'template'
   }
 ];
 
