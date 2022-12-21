@@ -4,18 +4,39 @@
 <div class="row">
     <div class="col">
 
-        <form>
+        <form (ngSubmit)="guardar( miFormulario )"
+              #miFormulario="ngForm"
+              autocomplete="off">
 
             <!-- Campo del producto -->
             <div class="mb-3 row">
+
+
                 <label class="col-sm-3 col-form-label">Producto</label>
+
+
                 <div class="col-sm-9">
+
                     <input type="text"
                            class="form-control"
-                           placeholder="Nombre del producto">
-                    <span class="form-text text-danger"> Debe de serde 3 letras </span>
+                           ngModel
+                           name="producto"
+                           placeholder="Nombre del producto"
+                           required
+                           minlength="3">
+
+                    <span class="form-text text-danger">
+                        Debe de serde 3 letras
+                    </span>
                 </div>
             </div>
+
+
+
+
+
+
+
 
              <!-- Campo del producto -->
             <div class="mb-3 row">
@@ -23,7 +44,11 @@
                 <div class="col-sm-9">
                     <input type="number"
                            class="form-control"
-                           placeholder="Precio del producto">
+                           ngModel
+                           name="precio"
+                           placeholder="Precio del producto"
+                           required
+                           min="0">
                 </div>
             </div>
 
@@ -33,6 +58,8 @@
                 <div class="col-sm-9">
                     <input type="number"
                            class="form-control"
+                           ngModel
+                           name="existencias"
                            placeholder="Existencias del producto">
                 </div>
             </div>
@@ -53,3 +80,25 @@
 
     </div>
 </div>
+
+
+
+
+<div class="row">
+    <div class="col">
+
+        <span>Valid</span>
+        <pre>{{ miFormulario.valid }}</pre>
+
+        <span>Pristine</span>
+        <pre>{{ miFormulario.pristine }}</pre>
+
+        <span>Touched</span>
+        <pre>{{ miFormulario.touched }}</pre>
+
+        <span>Valid</span>
+        <pre>{{ miFormulario.value | json }}</pre>
+
+    </div>
+</div>
+
