@@ -25,8 +25,8 @@ export class DinamicosComponent {
   persona: Persona = {
     nombre: 'Pato',
     favoritos: [
-        { id: 1, nombre: 'Metal Slug' },
-        { id: 2, nombre: 'Shadow of War' },
+        { id: 1, nombre: 'Shadow of War' },
+        { id: 2, nombre: 'Metal Slug' },
     ]
   }
 
